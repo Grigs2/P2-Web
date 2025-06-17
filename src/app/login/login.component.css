@@ -1,0 +1,222 @@
+.btn-login-personalizado{
+  background-color: #ffcbdb !important;
+  color: white;
+  border-radius: 8px;
+  border-color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+body {
+    background-color: white;
+  }
+  
+  .cabecalho {
+      background-color: white;
+      padding: 10px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-logo {
+      height: 20px;
+      display: flex;
+    align-items: center;
+    justify-content: center; 
+    max-height: 80px;
+  }
+  
+  .menu-container {
+      margin: 20px 0;
+      color: white;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    
+  }
+  
+  .menu {
+    background-color:  #ffcbdb; 
+    padding: 10px 0; 
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+  }
+  
+  .container-produtos {
+    margin-top: 20px;
+    background-color: #ffcbdb;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  
+  .card-produto {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      min-height: 400px; 
+      transition: transform 0.3s ease;
+  }
+  
+  .card img {
+      width: 100%;
+      border-radius: 8px;
+  }
+  .card-img-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 200px;
+    object-fit: cover;
+  }
+  .card-produto:hover{
+      background-color: white;
+      color: black;
+      transform: scale(1.05);
+  }
+  
+  
+  footer {
+      background-color: #f8f9fa;
+      padding: 20px;
+      margin-top: 30px;
+      text-align: center;
+  }
+  .nav-logo img {
+    max-height: 120px; 
+    width: auto; 
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .nav-logo img:hover {
+    transform: scale(1.2); 
+    opacity: 0.9;
+  }
+  
+  nav {
+    background-color:  #ffcbdb;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  .nav-cadastro button {
+    background-color:  #ffcbdb;
+    color: white;
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    transition: transform 0.3s ease;
+  }
+  
+  .nav-cadastro button:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.05);
+  }
+  
+  .cabecalho {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  
+  .navbar.bg-body-tertiary .form-control {
+  padding: 8px;
+  padding-right: 40px; 
+  width: 300px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  transition: border-color 0.3s ease; 
+  background-color: #ffcbdb;
+  }
+  .navbar.bg-body-tertiary {
+  background-color: transparent !important;
+  }
+  
+  .btn-outline-success {
+  background-color: transparent !important; 
+  color: white !important;
+  border: none !important;
+  }
+  
+  .navbar.bg-body-tertiary .btn {
+  position: absolute; 
+  right: 10px; 
+  top: 50%;
+  transform: translateY(-50%); 
+  cursor: pointer;
+  border: none;
+  background: none;
+  }
+  
+  .navbar.bg-body-tertiary .btn i {
+  font-size: 20px;
+  color: #ffffff; 
+  }
+  
+  
+  main{
+  border-radius: 10px;
+  }
+  .nav-logo img {
+    padding: 10px;
+    max-height: 50px;
+  }
+  
+  .btn-detalhes {
+    background-color: #ffcbdb;
+    color: white;
+    border-radius: 8px;
+    border-color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: 0.3s;
+    box-shadow: 8px 8px 5px rgb(54, 52, 52);
+  }
+  .btn-carrinho{
+    background-color: #ffffff !important;
+    color: white;
+    border-radius: 8px;
+    border-color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: 0.3s;
+    box-shadow: 8px 8px 5px rgb(54, 52, 52);
+  }
+  
+  .btn-detalhes:hover {
+    background-color: rgb(202, 174, 191);
+  }
+  
+  .btn-carrinho:hover{
+    background-color: rgb(202, 174, 191);
+  }
+  
+  @media (max-width: 1024px) {
+    .img-menu-navegacao {
+      grid-template-columns: repeat(3, 1fr); 
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .img-menu-navegacao {
+      grid-template-columns: repeat(2, 1fr); 
+  }
+  }
+  @media (max-width: 480px) {
+    .img-menu-navegacao {
+      grid-template-columns: 1fr; 
+  }
+  } 

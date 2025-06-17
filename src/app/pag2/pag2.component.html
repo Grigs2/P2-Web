@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Doceria da Yu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="../styles.css" rel="stylesheet">
+
+</head>
+<header>
+    <nav class="cabecalho d-flex justify-content-between align-items-center p-3 bg-light shadow">
+      <div class="nav-logo">
+        <a href="../app.component.html"><img src="/src/assets/logo-site.png" alt="Logo" class="logo-img"></a>
+      </div>
+      <div class="navbar bg-body-tertiary w-50">
+        <div class="container-fluid">
+          <div class="container text-center col-lg-6">
+            <ul class="navbar-nav d-flex flex-row me-auto mb-2 mb-lg-0 nav-doceria">
+              <li class="nav-item me-4">
+                <a class="nav-link nav-doceria-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item me-4">
+                <a class="nav-link nav-doceria-link" href="#">Produtos</a>
+              </li>
+              <li class="nav-item me-4">
+                <a class="nav-link nav-doceria-link" href="#">Contato</a>
+              </li>
+            </ul>
+            
+        </div>
+        <form class="d-flex ms-auto" role="search">
+          <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+          <button class="btn btn-outline-success" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+        </div>
+      </div>
+      <div class="nav-cadastro d-flex gap-2">
+        <a href="../app/cadastro/cadastro.component.html" class="text-black text-decoration-none">
+          <button class="btn btn-light">
+            <i class="fa-solid fa-user"></i> Cadastro
+          </button>
+        </a>
+        <a href="../app/login/login.component.html" class="text-black text-decoration-none">
+          <button class="btn btn-light">
+            <i class="fa-solid fa-user"></i> Entrar
+          </button>
+        </a>
+        <a href="../app/gravar-pedido/gravar-pedido.component.html" class="btn-carrinho-superior">
+          <button class="btn btn-carrinho-superior">
+            <i class="fa-solid fa-cart-plus"></i>
+          </button>
+        </a>
+      </div>
+    </nav>
+  </header>
+<body>
+  <div class="menu-container">
+      <div class="menu"> Página 2</div>
+  </div>
+  <nav class="d-flex justify-content-center mt-3" aria-label="Navegação de página">
+    <ul class="pagination pagination-sm my-0">
+        <li class="page-item"><a class="page-link" href="../app.component.html">1</a></li>
+        <li class="page-item"><a class="page-link" href="./pag2.component.html">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+            <a class="page-link" href="#" aria-label="Próximo">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+  <div class="container container-produtos mt-4">
+      <div class="row justify-content-center g-4">
+          <div class="col-sm-6 col-md-4 col-lg-3 d-flex">
+              <div class="card card-produto flex-fill">
+                  <img src="/src/assets/bolo1.jpeg" alt="Bolo de Cenoura" class="card-img-top">
+                  <div class="card-body text-center">
+                      <h5 class="card-title">Bolo de Cenoura</h5>
+                      <h6 class="text-danger">R$35,99</h6>
+                      <p class="card-text">Bolo de cenoura com cobertura de chocolate 400g</p>
+                  </div>
+                  <div class="card-footer text-center d-flex justify-content-around">
+                      <a href= "../app/detalhe-produto/detalhe-produto.component.html" button class= "btn-detalhes outline">Detalhes</a>
+                      <button class="btn btn-carrinho"><i class="fa-solid fa-cart-plus"></i></button>
+                  </div>
+              </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3 d-flex">
+            <div class="card card-produto flex-fill">
+                <img src="/src/assets/bolo2.jpeg" alt="Bolo de Cenoura" class="card-img-top">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Bolo de Milho com Goiabada</h5>
+                    <h6 class="text-danger">R$25,99</h6>
+                    <p class="card-text">Bolo de Milho com Goiabada 400g</p>
+                </div>
+                <div class="card-footer text-center d-flex justify-content-around">
+                    <a href= "../app/detalhe-produto/detalhe-produto.component.html" button class= "btn-detalhes outline">Detalhes</a>
+                    <button class="btn btn-carrinho"><i class="fa-solid fa-cart-plus"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3 d-flex">
+          <div class="card card-produto flex-fill">
+              <img src="/src/assets/brownie1.jpeg" alt="Brownie de Chocolate" class="card-img-top">
+              <div class="card-body text-center">
+                  <h5 class="card-title">Brownie de Chocolate</h5>
+                  <h6 class="text-danger">R$10,99</h6>
+                  <p class="card-text">Brownie de Chocolate com casquinha crocante e Gotas de Chocolate</p>
+              </div>
+              <div class="card-footer text-center d-flex justify-content-around">
+                <a href= "../app/detalhe-produto/detalhe-produto.component.html" button class= "btn-detalhes outline">Detalhes</a>
+                  <button class="btn btn-carrinho"><i class="fa-solid fa-cart-plus"></i></button>
+              </div>
+          </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3 d-flex">
+          <div class="card card-produto flex-fill">
+              <img src="/src/assets/cookie1.jpeg" alt="Cookie de Baunilha" class="card-img-top">
+              <div class="card-body text-center">
+                  <h5 class="card-title">Cookie de Baunilha</h5>
+                  <h6 class="text-danger">R$10,99</h6>
+                  <p class="card-text">Cookie feito com massa de baunilha e Gotas de chocolate</p>
+              </div>
+              <div class="card-footer text-center d-flex justify-content-around">
+                <a href= "../app/detalhe-produto/detalhe-produto.component.html" button class= "btn-detalhes outline">Detalhes</a>
+                
+                  <button class="btn btn-carrinho"><i class="fa-solid fa-cart-plus"></i></button>
+              </div>
+          </div>
+      </div>
+    
+<div class="col-sm-6 col-md-4 col-lg-3 d-flex">
+  <div class="card card-produto flex-fill">
+    <img src="/src/assets/torta-de-limao.jpg" alt="Torta de Limão" class="card-img-top" style="height: 200px; object-fit: cover;">
+    <div class="card-body text-center">
+      <h5 class="card-title">Torta de Limão</h5>
+      <h6 class="text-danger">R$24,99</h6>
+      <p class="card-text">Torta gelada de limão com massa crocante e cobertura de merengue</p>
+    </div>
+    <div class="card-footer text-center d-flex justify-content-around">
+      <button class="btn btn-outline-primary">Detalhes</button>
+      <button class="btn btn-success"><i class="fa-solid fa-cart-plus"></i></button>
+    </div>
+  </div>
+</div>
+
+
+<div class="col-sm-6 col-md-4 col-lg-3 d-flex">
+  <div class="card card-produto flex-fill">
+    <img src="/src/assets/bolo-de-pote.jpeg" alt="Bolo de Pote" class="card-img-top" style="height: 200px; object-fit: cover;">
+    <div class="card-body text-center">
+      <h5 class="card-title">Bolo de Pote</h5>
+      <h6 class="text-danger">R$12,00</h6>
+      <p class="card-text">Bolo de pote com massa de chocolate e recheio de brigadeiro</p>
+    </div>
+    <div class="card-footer text-center d-flex justify-content-around">
+      <button class="btn btn-outline-primary">Detalhes</button>
+      <button class="btn btn-success"><i class="fa-solid fa-cart-plus"></i></button>
+    </div>
+  </div>
+</div>
+
+
+<div class="col-sm-6 col-md-4 col-lg-3 d-flex">
+  <div class="card card-produto flex-fill">
+    <img src="/src/assets/bolo-de-maca.jpeg" alt="Bolo de Maçã" class="card-img-top" style="height: 200px; object-fit: cover;">
+    <div class="card-body text-center">
+      <h5 class="card-title">Bolo de Maçã</h5>
+      <h6 class="text-danger">R$19,90</h6>
+      <p class="card-text">Bolo caseiro de maçã com canela e toque crocante</p>
+    </div>
+    <div class="card-footer text-center d-flex justify-content-around">
+      <button class="btn btn-outline-primary">Detalhes</button>
+      <button class="btn btn-success"><i class="fa-solid fa-cart-plus"></i></button>
+    </div>
+  </div>
+</div>
+
+
+<div class="col-sm-6 col-md-4 col-lg-3 d-flex">
+  <div class="card card-produto flex-fill">
+    <img src="/src/assets/brigadeiro.jpg" alt="Brigadeiro" class="card-img-top" style="height: 200px; object-fit: cover;">
+    <div class="card-body text-center">
+      <h5 class="card-title">Brigadeiro</h5>
+      <h6 class="text-danger">R$3,00</h6>
+      <p class="card-text">Docinho clássico de chocolate com granulado</p>
+    </div>
+    <div class="card-footer text-center d-flex justify-content-around">
+      <button class="btn btn-outline-primary">Detalhes</button>
+      <button class="btn btn-success"><i class="fa-solid fa-cart-plus"></i></button>
+    </div>
+  </div>
+</div>
+
+<div class="col-sm-6 col-md-4 col-lg-3 d-flex">
+  <div class="card card-produto flex-fill">
+    <img src="/src/assets/brigadeiro-morango.jpg" alt="Brigadeiro com Morango" class="card-img-top" style="height: 200px; object-fit: cover;">
+    <div class="card-body text-center">
+      <h5 class="card-title">Brigadeiro com Morango</h5>
+      <h6 class="text-danger">R$4,50</h6>
+      <p class="card-text">Brigadeiro recheado com morango inteiro</p>
+    </div>
+    <div class="card-footer text-center d-flex justify-content-around">
+      <button class="btn btn-outline-primary">Detalhes</button>
+      <button class="btn btn-success"><i class="fa-solid fa-cart-plus"></i></button>
+    </div>
+  </div>
+</div>
+
+
+<div class="col-sm-6 col-md-4 col-lg-3 d-flex">
+  <div class="card card-produto flex-fill">
+    <img src="/src/assets/mousse-limao.jpg" alt="Mousse de Limão" class="card-img-top" style="height: 200px; object-fit: cover;">
+    <div class="card-body text-center">
+      <h5 class="card-title">Mousse de Limão</h5>
+      <h6 class="text-danger">R$6,99</h6>
+      <p class="card-text">Sobremesa cremosa e gelada com sabor de limão</p>
+    </div>
+    <div class="card-footer text-center d-flex justify-content-around">
+      <button class="btn btn-outline-primary">Detalhes</button>
+      <button class="btn btn-success"><i class="fa-solid fa-cart-plus"></i></button>
+    </div>
+  </div>
+</div>
+
+
+<div class="col-sm-6 col-md-4 col-lg-3 d-flex">
+  <div class="card card-produto flex-fill">
+    <img src="/src/assets/mousse-maracuja.webp" alt="Mousse de Maracujá" class="card-img-top" style="height: 200px; object-fit: cover;">
+    <div class="card-body text-center">
+      <h5 class="card-title">Mousse de Maracujá</h5>
+      <h6 class="text-danger">R$6,99</h6>
+      <p class="card-text">Mousse de maracujá com calda da fruta por cima</p>
+    </div>
+    <div class="card-footer text-center d-flex justify-content-around">
+      <button class="btn btn-outline-primary">Detalhes</button>
+      <button class="btn btn-success"><i class="fa-solid fa-cart-plus"></i></button>
+    </div>
+  </div>
+</div>
+
+<div class="col-sm-6 col-md-4 col-lg-3 d-flex">
+  <div class="card card-produto flex-fill">
+    <img src="/src/assets/temaki.jpeg" alt="Temaki de Banana" class="card-img-top" style="height: 200px; object-fit: cover;">
+    <div class="card-body text-center">
+      <h5 class="card-title">Temaki de Banana</h5>
+      <h6 class="text-danger">R$15,00</h6>
+      <p class="card-text">Temaki doce com banana, Nutella e granulado</p>
+    </div>
+    <div class="card-footer text-center d-flex justify-content-around">
+      <button class="btn btn-outline-primary">Detalhes</button>
+      <button class="btn btn-success"><i class="fa-solid fa-cart-plus"></i></button>
+    </div>
+  </div>
+</div>
+
+<div class="col-sm-6 col-md-4 col-lg-3 d-flex">
+  <div class="card card-produto flex-fill">
+    <img src="/src/assets/cookies-vermelho.jpeg" alt="Cookies Red Velvet" class="card-img-top" style="height: 200px; object-fit: cover;">
+    <div class="card-body text-center">
+      <h5 class="card-title">Cookies Red Velvet</h5>
+      <h6 class="text-danger">R$8,99</h6>
+      <p class="card-text">Cookies vermelhos com gotas de chocolate branco</p>
+    </div>
+    <div class="card-footer text-center d-flex justify-content-around">
+      <button class="btn btn-outline-primary">Detalhes</button>
+      <button class="btn btn-success"><i class="fa-solid fa-cart-plus"></i></button>
+    </div>
+  </div>
+</div>
+
+<div class="col-sm-6 col-md-4 col-lg-3 d-flex">
+  <div class="card card-produto flex-fill">
+    <img src="/src/assets/cookies-doce-de-leite.jpeg" alt="Cookies Doce de Leite" class="card-img-top" style="height: 200px; object-fit: cover;">
+    <div class="card-body text-center">
+      <h5 class="card-title">Cookies de Doce de Leite</h5>
+      <h6 class="text-danger">R$9,90</h6>
+      <p class="card-text">Cookies recheados com doce de leite argentino</p>
+    </div>
+    <div class="card-footer text-center d-flex justify-content-around">
+      <button class="btn btn-outline-primary">Detalhes</button>
+      <button class="btn btn-success"><i class="fa-solid fa-cart-plus"></i></button>
+    </div>
+  </div>
+</div>
+
+      </div>
+  </div>
+
+  <footer class="bg-light py-4 mt-4">
+      <div class="container text-center">
+          <p>&copy; 2023 - Doceria da Yu Online Ltda</p>
+          <p>Rua Eu Te Amo Stephany, 2501, Rio de Janeiro - SP</p>
+          <p>CNPJ: 30.102.003/2612-20</p>
+          <a href="#" class="text-decoration-none text-dark">Privacidade</a> |
+          <a href="#" class="text-decoration-none text-dark">Termos</a> |
+          <a href="#" class="text-decoration-none text-dark">Fale Conosco</a>
+      </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>

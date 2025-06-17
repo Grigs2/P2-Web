@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Doceria da Yu</title>
+</head>
+<body>
+<header>
+    <nav class="cabecalho d-flex justify-content-between align-items-center p-3 bg-light shadow">
+      <div class="nav-logo">
+        <a routerLink="/vitrine" (click)="menu()"><img src= "../assets/logo-site.png" alt="Logo" class="logo-img"></a>
+      </div>
+      <div class="navbar bg-body-tertiary w-50">
+        <div class="container-fluid">
+          <div class="container text-center col-lg-6">
+            <ul class="navbar-nav d-flex flex-row me-auto mb-2 mb-lg-0 nav-doceria">
+              <li class="nav-item me-4">
+                <a class="nav-link nav-doceria-link active" aria-current="page" (click)="menu()">Home</a>
+              </li>
+              <li class="nav-item me-4">
+                <a class="nav-link nav-doceria-link" (click)="menu()">Produtos</a>
+              </li>
+              <li class="nav-item me-4">
+                <a class="nav-link disabled">Contato</a>
+              </li>
+            </ul>
+            
+        </div>
+        <div class="d-flex ms-auto" role="search">
+          <input
+            class="form-control me-2"
+            type="text"
+            placeholder="Buscar"
+            [(ngModel)]="termoBusca"
+            (input)="buscar()"
+            name="busca"
+          />
+          <button class="btn btn-outline-success" type="button">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>        
+        </div>
+      </div>
+      <div class="nav-cadastro d-flex gap-2">
+        <a routerLink="/cadastro" class="text-black text-decoration-none">
+          <button class="btn btn-light" (click)="cadastro()">
+            <i class="fa-solid fa-user"></i> Cadastro
+          </button>
+        </a>
+        <a routerLink="/login" class="text-black text-decoration-none">
+          <button class="btn btn-light" (click)="login()">
+            <i class="fa-solid fa-user"></i> Entrar
+          </button>
+        </a>
+          <button class="btn btn-carrinho-superior" (click)="carrinho()">
+            <i class="fa-solid fa-cart-plus"></i>
+          </button>
+        
+      </div>
+    </nav>
+  </header>
+
+
+  <section class="hero">
+    <div class="container">
+      <div class="row align-items-center min-vh-80">
+        <div class="col-lg-6">
+          <h1 class="display-4 fw-bold text-white">Bem vindo a Doceria da Yu! :) </h1>
+          <p class="lead">Descubra o verdadeiro significado de "A vida é doce!"</p>
+          <a href="#produtos" class="btn btn-detalhes btn-lg">Confira nossos produtos</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <nav class="d-flex justify-content-center mt-3" aria-label="Navegação de página">
+  
+    <ul class="pagination pagination-sm my-0">
+        <li class="page-item"><a class="page-link" routerLink="/">1</a></li>
+        <li class="page-item"><a class="page-link" routerLink="/pag2">2</a></li>
+        <li class="page-item"><a class="page-link" routerLink="#">3</a></li>
+        <li class="page-item">
+            <a class="page-link" href="#" aria-label="Próximo">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<div class="menu-container">
+  <div class="menu"> PRODUTOS</div>
+</div>
+
+  <div id="produtos"class="container container-produtos mt-4">
+      <div class="row justify-content-center g-4">
+          <div class="col-sm-6 col-md-4 col-lg-3 d-flex" *ngFor="let obj of produtos">
+              <div class="card card-produto flex-fill">
+                  <img src="../assets/{{obj.nome}}.jpg" alt="imagem do produto" class="card-img-top">
+                  <div class="card-body text-center">
+                      <h5 class="card-title">{{obj.nome}}</h5>
+                      <h6 class="text-danger">R${{obj.preco}}</h6>
+                      <p class="card-text">{{obj.descricao}}</p>
+                  </div>
+                  <div class="card-footer text-center d-flex justify-content-around">
+                        <button class="btn-detalhes outline" (click)="detalhe(obj);">Detalhes</button>
+                        <button class="btn btn-carrinho" (click)="adicionarAoCarrinho(obj)"><i class="fa-solid fa-cart-plus"></i></button>
+                  </div>
+              </div>
+          </div>
+    </div>
+  </div>
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Detalhe do produto</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+          Modal body..
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">fechar</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-light py-4 mt-4">
+      <div class="container text-center">
+          <p>&copy; 2023 - Doceria da Yu Online Ltda</p>
+          <p>Rua Eu Te Amo Stephany, 2501, Rio de Janeiro - SP</p>
+          <p>CNPJ: 30.102.003/2612-20</p>
+          <a href="#" class="text-decoration-none text-dark">Privacidade</a> |
+          <a href="#" class="text-decoration-none text-dark">Termos</a> |
+          <a href="#" class="text-decoration-none text-dark">Fale Conosco</a>
+      </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
