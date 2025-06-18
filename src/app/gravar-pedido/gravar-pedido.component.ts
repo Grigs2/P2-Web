@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CarrinhoService } from '../service/carrinho.service';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-gravar-pedido',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './gravar-pedido.component.html',
   styleUrls: ['./gravar-pedido.component.css']
 })
 export class GravarPedidoComponent implements OnInit {
-  carrinho() {
+carrinho() {
     location.href = "./gravar-pedido";
   }
 
@@ -30,48 +31,61 @@ export class GravarPedidoComponent implements OnInit {
     total: 0
   };
 
-  constructor(private carrinhoService: CarrinhoService) {}
+  constructor(private carrinhoService: CarrinhoService, private router: Router) {}
 
   ngOnInit(): void {
-  const carrinhoLocal = localStorage.getItem('carrinho');
-  if (carrinhoLocal) {
-    // Recupera o carrinho do LocalStorage
-    const carrinho = JSON.parse(carrinhoLocal);
-
-    // Ajusta os dados do carrinho na estrutura esperada
-    this.obj.itens = carrinho.itens ?? [];
-    this.obj.total = carrinho.total ?? 0;
-
-    this.calcularTotal();
+    const carrinhoLocal = localStorage.getItem('carrinho');
+    if (carrinhoLocal) {
+      try{this.obj = JSON.parse(carrinhoLocal);
+          this.calcularTotal();
+      }
+      catch (error) {
+        console.error('Erro ao carregar o carrinho do localStorage:', error);
+        this.obj = { itens: [], total: 0 };
+        }
+      
+      }
   }
-}
 
- removerItem(id: number): void {
-  this.obj.itens = this.obj.itens.filter(item => item.id !== id);
-  this.calcularTotal();
-
-  // Salvar o objeto completo com total atualizado
-  localStorage.setItem('carrinho', JSON.stringify(this.obj));
-}
+  removerItem(id: number): void {
+    this.obj.itens = this.obj.itens.filter(item => item.id !== id);
+    this.calcularTotal();
+    localStorage.setItem('carrinho', JSON.stringify(this.obj)); 
+  }
 
   calcularTotal(): void {
-  // Garantir que seja um array para evitar erros
-  if (!Array.isArray(this.obj.itens)) {
-    this.obj.itens = [];
+    const itens = Array.isArray(this.obj.itens) ? this.obj.itens : [];
+    this.obj.total = itens.reduce((soma, item) => soma + (item.preco || 0), 0);
   }
 
-  this.obj.total = this.obj.itens.reduce((sum, item) => sum + item.preco, 0);
-}
-
   limpar(): void {
+    const idUsuario = localStorage.getItem('usuarioLogadoId');
+
+    if (!idUsuario) {
+    alert('Você precisa estar logado para finalizar a compra.');
+    this.router.navigate(['/login']);
+    return;
+  }
+    
+    const carrinhoJson = localStorage.getItem('carrinho');
+    if (!carrinhoJson || carrinhoJson === "[]" || carrinhoJson === "{}") {
+      alert('Seu carrinho está vazio!');
+      return;
+    }
+    const carrinho = JSON.parse(carrinhoJson || '{}');
+
     const dto = {
-      valor: this.obj.total,
-      produtosCarrinhos: this.obj.itens.map(item => ({
-        produto: { id: item.id }
+      id: carrinho.id || 0,
+      total: carrinho.total,
+      produtos: carrinho.itens.map((item: any) => ({
+      id: item.id,
+      nome: item.nome,
+      descricao: item.descricao,
+      preco: item.preco
       }))
     };
 
-    this.carrinhoService.finalizarCompra(dto).subscribe({
+    this.carrinhoService.finalizarCompra(dto, idUsuario!).subscribe({
       next: (mensagem) => {
         alert(mensagem);
         this.obj = { itens: [], total: 0 };

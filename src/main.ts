@@ -10,6 +10,6 @@ bootstrapApplication(AppComponent, {
   providers: [
     importProvidersFrom(FormsModule),
     provideRouter(routes),
-    provideHttpClient() 
+    provideHttpClient()
   ]
 });

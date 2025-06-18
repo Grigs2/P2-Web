@@ -10,7 +10,7 @@ export class CarrinhoService {
 
   constructor(private http: HttpClient) {}
 
-  finalizarCompra(dto: any): Observable<string> {
-    return this.http.post(`${this.apiUrl}/FinalizarCompra`, dto, { responseType: 'text' });
+  finalizarCompra(dto: any, idUsuario: string): Observable<string> {
+    return this.http.post(`${this.apiUrl}/FinalizarCompra/${idUsuario}`, dto, { responseType: 'text' });
   }
 }

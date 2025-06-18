@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
@@ -11,7 +11,7 @@ import { PerfilService } from '../service/perfil.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   loginForm = {
     email: '',
     senha: ''
@@ -19,16 +19,23 @@ export class LoginComponent {
 
   constructor(private router: Router, private perfilService: PerfilService) {}
 
+  ngOnInit(): void {
+    if (localStorage.getItem('usuarioLogado') === 'true') {
+      localStorage.removeItem('usuarioLogado');
+      localStorage.removeItem('usuarioLogadoId');
+    }
+  }
   validarLogin(form: NgForm): void {
     if (form.valid) {
       this.perfilService.autenticar(this.loginForm.email, this.loginForm.senha)
         .subscribe({
-          next: (tipo) => {
-            if (tipo) {
+          next: (idUsuario) => {
+            if (idUsuario) {
               alert('Login realizado com sucesso!');
+              localStorage.setItem('usuarioLogadoId', String(idUsuario));
               localStorage.setItem('usuarioLogado', 'true');
-              localStorage.setItem('tipoUsuario', tipo); 
               this.router.navigate(['/']);
+              alert(`${idUsuario}`);
             } else {
               alert('Email ou senha incorretos!');
             }
